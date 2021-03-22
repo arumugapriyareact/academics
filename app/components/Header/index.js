@@ -3,6 +3,8 @@ import { FormattedMessage } from 'react-intl';
 import moment from 'moment';
 import axios from 'axios';
 import search from '../../images/search.png';
+import ReactTicker from '../ReactTicker';
+import SchedulerItem from '../SchedulerItem';
 
 function Header() {
   const [response, setResponse] = useState();
@@ -24,7 +26,105 @@ function Header() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+        <div className="row">
+          <header className="container-fluid">
+            {/* TopBar Starts here */}
+            <section className="top-bar row">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-6 col-12">
+                    <p className="first">
+                      {moment().format('ddd, MMM DD, YYYY')}
+                    </p>
+                    <p>SGT {moment().format(' h:mm a')}</p>
+                    <p>
+                      {/* <img src="images/sun-icon.svg" alt="icon" /> */}
+                      Singapore 34°C/25°C
+                    </p>
+                  </div>
+                  <div className="col-md-6 text-right d-flex d-md-flex login-sec align-items-center">
+                    <p className="first">
+                      <a href="javascript:;">Login or signup</a>
+                    </p>
+                    <p>
+                      <a href="javascript:;">Subscribe</a>
+                    </p>
+                    <p className="pr-0">
+                      <a href="javascript:;">Contribute With Us</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            {/* TopBar Ends here */}
+            {/* Header Menu Starts here */}
+            <section className="middle-header row">
+              <div className="container">
+                <div className="row">
+                  <div className="middle-nav">
+                    <div className="col-8">
+                      <span>Logo</span>
+                    </div>
+                    <div className="col-4 nav-page">
+                      <a href="/home">Home</a>
+                      <a href="/class">Class</a>
+                      <a href="/topics">Topics</a>
+                      <a href="#">Q&A</a>
+                      <a href="#">Exam</a>
+                      <a href="#">Podcasts</a>
+                      <a href="#">
+                        <img
+                          src={search}
+                          alt="search icon"
+                          style={{
+                            width: '15px',
+                            height: '15px',
+                          }}
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            {/* Header Menu Ends here */}
+          </header>
+          <section className="flash-news row">
+            <span className="exclusive">
+              {/* <img src="images/star.svg" alt="icon" /> */}
+              NEWS FEED
+            </span>
+            <div className="fl-news-item">
+              <ReactTicker data={['value']} />
+              {/* <ul className="list-inline">
+                <li className="list-inline-item">
+                  <a href="javascript:;">
+                    Duis aute irure dolor in reprehenderit in voluptate
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="javascript:;">
+                    Excepteur sint occaecat cupidatat non proident
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="javascript:;">
+                    Sed ut perspiciatis unde omnis iste natus error sit
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="javascript:;">
+                    Piciatis unde irure dolor in reprehenderit in voluptate
+                  </a>
+                </li>
+              </ul>
+             */}
+            </div>
+          </section>
+        </div>
+      </div>
+      {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             {moment().format('dddd MMM DD YYYY, h:mm a')}
@@ -100,8 +200,8 @@ function Header() {
           </div>
         </div>
       </nav>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div
+      <nav className="navbar navbar-expand-lg navbar-light bg-light"> */}
+      {/* <div
           className="d-flex"
           style={{ overflow: 'auto', whiteSpace: 'nowrap', marginLeft: '10px' }}
         >
@@ -119,6 +219,7 @@ function Header() {
           <span>Exclusive2</span>
         </div>
       </nav>
+    */}
     </>
   );
 }

@@ -16,6 +16,8 @@ import FeaturePage from 'containers/FeaturePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import ClassPage from 'components/ClassPage';
+import Topics from 'containers/Topics';
 
 import GlobalStyle from '../../global-styles';
 
@@ -35,10 +37,11 @@ export default function App() {
         <meta name="description" content="Academics application" />
       </Helmet>
       <Header />
+      {/* <HomePage /> */}
       <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
-        <Route path="" component={NotFoundPage} />
+        <Route path="/class" component={ClassPage} />
+        <Route path="/home" component={HomePage} />
+        <Route path="/topics" component={Topics} />
       </Switch>
       <Footer />
       {/* <GlobalStyle /> */}
